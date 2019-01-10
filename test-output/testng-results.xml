@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="9749" started-at="2019-01-06T14:01:08Z" finished-at="2019-01-06T14:01:17Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="9749" started-at="2019-01-06T14:01:08Z" finished-at="2019-01-06T14:01:17Z">
+      <class name="Selenium.Topic_01_Setup_Envairoment">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Selenium.Topic_01_Setup_Envairoment@f5f2bb7]" name="beforeClass" is-config="true" duration-ms="9388" started-at="2019-01-06T21:01:08Z" finished-at="2019-01-06T21:01:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="TC_01_CheckUrl()[pri:0, instance:Selenium.Topic_01_Setup_Envairoment@f5f2bb7]" name="TC_01_CheckUrl" duration-ms="29" started-at="2019-01-06T21:01:17Z" finished-at="2019-01-06T21:01:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_01_CheckUrl -->
+        <test-method status="PASS" signature="TC_02_CheckTitle()[pri:0, instance:Selenium.Topic_01_Setup_Envairoment@f5f2bb7]" name="TC_02_CheckTitle" duration-ms="12" started-at="2019-01-06T21:01:17Z" finished-at="2019-01-06T21:01:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_02_CheckTitle -->
+        <test-method status="PASS" signature="TC_03_HomPageLogoDisplayed()[pri:0, instance:Selenium.Topic_01_Setup_Envairoment@f5f2bb7]" name="TC_03_HomPageLogoDisplayed" duration-ms="111" started-at="2019-01-06T21:01:17Z" finished-at="2019-01-06T21:01:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_03_HomPageLogoDisplayed -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Selenium.Topic_01_Setup_Envairoment@f5f2bb7]" name="afterClass" is-config="true" duration-ms="179" started-at="2019-01-06T21:01:17Z" finished-at="2019-01-06T21:01:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Selenium.Topic_01_Setup_Envairoment -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
