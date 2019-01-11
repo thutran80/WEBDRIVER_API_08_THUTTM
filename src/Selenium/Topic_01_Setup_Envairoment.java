@@ -33,6 +33,13 @@ public class Topic_01_Setup_Envairoment {
 			  
   }
   
+  @Test
+  public void TC_04_CheckSlackVsGithub() {
+	  WebElement homePageLogo = driver.findElement(By.xpath("//img[contains(@src,'logo.png')]"));
+	  Assert.assertTrue(homePageLogo.isDisplayed());
+			  
+  }
+  
   @BeforeClass
   public void beforeClass() {
 	  driver = new FirefoxDriver();
