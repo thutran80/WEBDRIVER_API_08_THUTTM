@@ -31,16 +31,21 @@ public class Topic_05_Custom_Dropdown {
 	}
 	
   @Test
- public void TC_01() throws Exception{
+ public void TC_01_Jquery() throws Exception{
 	  driver.get("http://jqueryui.com/resources/demos/selectmenu/default.html");
 	  
 	  selectCustomDropdownList("//span[@id='number-button']","//ul[@id='number-menu']//li[@class='ui-menu-item']/div","19");
 	  Assert.assertTrue(driver.findElement(By.xpath("//span[@id='number-button']//span[@class='ui-selectmenu-text' and text()='19']")).isDisplayed());
 	  Thread.sleep(3000);
-	
 	  
   }  
-
+  @Test
+  public void TC_02_Angular() throws Exception {
+	  driver.get("https://material.angular.io/components/select/examples");
+	  selectCustomDropdownList("//mat-select[@placeholder='State']","//mat-option","Wisconsin");
+	  Assert.assertTrue(driver.findElement(By.xpath("//span[contains(text(),'Wisconsin')]")).isDisplayed());
+	  Thread.sleep(3000);
+  }
   
   @AfterClass
   public void afterClass() {
@@ -50,7 +55,8 @@ public class Topic_05_Custom_Dropdown {
   public void selectCustomDropdownList(String parentXpath, String childXpath, String valueExpected) throws Exception {
 	  //click vao de mo dropdown ra
 	  WebElement parent = driver.findElement(By.xpath(parentXpath));
-	  parent.click();
+	  //parent.click();
+	  javascript.executeScript("arguments[0].click();", parent);
 	  //wait cho tat ca cac item duoc hien thi
 	  List <WebElement> child = driver.findElements(By.xpath(childXpath));
 	  waitExplicit.until(ExpectedConditions.visibilityOfAllElements(child));
@@ -63,6 +69,7 @@ public class Topic_05_Custom_Dropdown {
 			  Thread.sleep(1000);
 			  //click vao item nay
 			  childItem.click();
+			  break;
 		  }
 	  }
 	  
