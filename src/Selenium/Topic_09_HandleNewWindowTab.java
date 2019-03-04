@@ -98,6 +98,29 @@ public void TC_03() throws Exception {
 	  closeAllWithoutParentWindows(parentID);
 }
 
+@Test
+public void TC_04() throws Exception {
+	//Step 01 - Truy cập vào trang: http://live.guru99.com/index.php/
+	driver.get("http://live.guru99.com/index.php/");
+	//Step 02 - Click vào Mobile tab
+	driver.findElement(By.xpath("//a[text()='Mobile']")).click();
+	//Step 03 - Add sản phẩm Sony Xperia vào để Compare (Add to Compare)
+	driver.findElement(By.xpath("//a[text()='Sony Xperia']/parent::h2/following-sibling::div[@class='actions']//a[text()='Add to Compare']")).click();
+	Assert.assertTrue(driver.findElement(By.xpath("//span[text()='The product Sony Xperia has been added to comparison list.']")).isDisplayed());
+	//Step 04 - Add sản phẩm Samsung Galaxy vào để Compare (Add to Compare)
+	driver.findElement(By.xpath("//a[text()='Samsung Galaxy']/parent::h2/following-sibling::div[@class='actions']//a[text()='Add to Compare']")).click();
+	Assert.assertTrue(driver.findElement(By.xpath("//span[text()='The product Samsung Galaxy has been added to comparison list.']")).isDisplayed());
+	//Step 05 - Click to Compare button
+	driver.findElement(By.xpath("//button[@title='Compare']")).click();
+	//Step 06 - Switch qa cửa sổ mới (chứa 2 sản phẩm đã được Add vào để Compare)
+	switchToChildWindowByTitle("Products Comparison List - Magento Commerce");
+	Thread.sleep(2000);
+	//Step 07 - Verify title của cửa sổ bằng:  Products Comparison List - Magento Commerce
+	Assert.assertEquals(driver.getTitle(), "Products Comparison List - Magento Commerce");
+	//Step 08 - Close tab và chuyển về Parent Window
+	String parentID = driver.getWindowHandle();
+	closeAllWithoutParentWindows(parentID);	
+}
   @AfterClass
   public void afterClass() {
 	  driver.quit();
