@@ -138,7 +138,7 @@ public class Topic_07_UserInteraction {
 	  //Step 03 - Verify message đã thay đổi: You did great!
 	  Assert.assertTrue(driver.findElement(By.xpath("//div[@id = 'droptarget' and text()='You did great!']")).isDisplayed());
   }
-  //bai tap nay chua chay duoc
+  //bai tap nay chua chay duoc 
   @Test
   public void TC_06_DrapAndDropHTML5_Css() throws Exception {
 	//Step 01 - Truy cập vào trang: https://html5demos.com/drag/#

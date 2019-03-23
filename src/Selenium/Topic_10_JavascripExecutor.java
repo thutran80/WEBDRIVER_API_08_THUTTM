@@ -110,12 +110,13 @@ public class Topic_10_JavascripExecutor {
 	  sendkeyToElementByJS("//input[@id='confirmation']","123456789");
 	//Step 05 - Click REGISTER button (Sử dụng JE)
 	  clickToElementByJS("//span[text()='Register']");
-	//Step 05 - Verify message xuất hiện khi đăng kí thành công: Thank you for registering with Main Website Store. (Sử dụng JE)
+	
+	  //Step 05 - Verify message xuất hiện khi đăng kí thành công: Thank you for registering with Main Website Store. (Sử dụng JE)
 	  String mySashboardInnerText = (String) executeForBrowser("return document.documentElement.innerText;");
 	  Assert.assertTrue(mySashboardInnerText.contains("Thank you for registering with Main Website Store."));
 	  
 	//Step 06 - Logout khỏi hệ thống (Sử dụng JE)
-	  clickToElementByJS("//div[class='account-cart-wrapper']//span[text()='Account']");
+	  clickToElementByJS("//div[@class='account-cart-wrapper']//span[text()='Account']");
 	  
 	  clickToElementByJS("//a[text()='Log Out']");
 	  

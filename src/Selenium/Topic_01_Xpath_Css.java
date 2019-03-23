@@ -2,11 +2,9 @@ package Selenium;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -16,7 +14,16 @@ public class Topic_01_Xpath_Css {
 	
 	@BeforeClass
 	public void beforeClass() {
-	  driver = new FirefoxDriver();
+		
+		String os = System.getProperty("os.name").toLowerCase();
+		
+		if (os.contains("mac")) {
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/lib/chromedriver");
+		}else {
+			System.setProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
+		}
+		driver = new ChromeDriver();
+	  //driver = new FirefoxDriver();
 	  driver.get("http://live.guru99.com/index.php/customer/account/login/");
 	  driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	  driver.manage().window().maximize();  
