@@ -58,7 +58,7 @@ public void beforeClass() {
 	
 	Thread.sleep(3000);
   }
-  
+ @Test
 public void TC_02_MultipleUpload() throws Exception {
 	//Step 01 - Truy cập vào trang: http://blueimp.github.com/jQuery-File-Upload/
 	driver.get("http://blueimp.github.com/jQuery-File-Upload/");
@@ -86,7 +86,6 @@ public void TC_02_MultipleUpload() throws Exception {
 	
 }
 
-@Test
 public void TC_04_UploadFile() throws Exception {
 
 //Step 01 - Open URL: 'https://encodable.com/uploaddemo/'
@@ -124,7 +123,7 @@ public void TC_04_UploadFile() throws Exception {
 	Assert.assertTrue(driver.findElement(By.xpath("//dl[@id='fcuploadsummary']/dd[text()='Email Address: Dam@gmail.com']")).isDisplayed());
 	
 //Step 08 - Click 'View Uploaded Files' link
-	driver.findElement(By.xpath("//a[text()='View Uploaded Files']")).click();
+	driver.findElement(By.xpath("//a[text()=View Uploaded Files']")).click();
 	
 //Step 09 - Click to random folder (Ex: dam1254353)
 	driver.findElement(By.xpath("//a[text()='"+ textFolder + "']")).click();
